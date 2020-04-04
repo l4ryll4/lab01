@@ -36,6 +36,13 @@ type
     MenuItem7: TMenuItem;
     MenuItem8: TMenuItem;
     MenuItem9: TMenuItem;
+    OpenDialog1: TOpenDialog;
+    SaveDialog1: TSaveDialog;
+    procedure MenuItem2Click(Sender: TObject);
+    procedure MenuItem3Click(Sender: TObject);
+    procedure MenuItem5Click(Sender: TObject);
+    procedure MenuItem6Click(Sender: TObject);
+    procedure MenuItem7Click(Sender: TObject);
   private
 
   public
@@ -44,10 +51,52 @@ type
 
 var
   Form1: TForm1;
+  FileWork: String; //Переменная, в которой хранится имя рабочего файла
 
 implementation
 
 {$R *.lfm}
+
+{ TForm1 }
+
+procedure SaveAs;
+begin
+  If Form1.SaveDialog1.Execute then
+     begin
+       Form1.Memo1.Lines.SaveToFile(Form1.SaveDialog1.FileName);
+       FileWork:=Form1.SaveDialog1.FileName;
+     end;
+end;
+
+procedure TForm1.MenuItem7Click(Sender: TObject);
+begin
+  Close;
+end;
+
+procedure TForm1.MenuItem3Click(Sender: TObject);
+begin
+  if OpenDialog1.Execute then
+     begin
+       Memo1.Lines.LoadFromFile(OpenDialog1.FileName);
+       FileWork:=OpenDialog1.FileName;
+     end;
+end;
+
+procedure TForm1.MenuItem5Click(Sender: TObject);
+begin
+  If FileWork='' then SaveAs else Memo1.Lines.SaveToFile(FileWork);
+end;
+
+procedure TForm1.MenuItem6Click(Sender: TObject);
+begin
+  SaveAs;
+end;
+
+procedure TForm1.MenuItem2Click(Sender: TObject);
+begin
+  FileWork:='';
+  Memo1.Clear; //Очищаем поле и имя переменной
+end;
 
 end.
 
