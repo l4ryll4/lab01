@@ -38,8 +38,14 @@ type
     MenuItem9: TMenuItem;
     OpenDialog1: TOpenDialog;
     SaveDialog1: TSaveDialog;
+    procedure MenuItem10Click(Sender: TObject);
+    procedure MenuItem11Click(Sender: TObject);
+    procedure MenuItem12Click(Sender: TObject);
     procedure MenuItem2Click(Sender: TObject);
     procedure MenuItem3Click(Sender: TObject);
+    procedure MenuItem4Click(Sender: TObject);
+    procedure MenuItem5Click(Sender: TObject);
+    procedure MenuItem6Click(Sender: TObject);
     procedure MenuItem7Click(Sender: TObject);
   private
 
@@ -80,10 +86,48 @@ begin
      end;
 end;
 
+//Нажатие "Закрыть" в меню "Файл"
+procedure TForm1.MenuItem4Click(Sender: TObject);
+begin
+  If MessageDlg('Подтверждение','Вы хотите сохранить файл перед закрытием?', mtConfirmation, [mbYes, mbNo], 0) = mrYes then If FileWork='' then SaveAs else Memo1.Lines.SaveToFile(FileWork);;
+  FileWork:='';
+  Memo1.Clear;
+
+end;
+
+procedure TForm1.MenuItem5Click(Sender: TObject);
+begin
+  If FileWork='' then SaveAs else Memo1.Lines.SaveToFile(FileWork);
+end;
+
+procedure TForm1.MenuItem6Click(Sender: TObject);
+begin
+  SaveAs;
+end;
+
+//Нажатие "Новый" в меню "Файл"
 procedure TForm1.MenuItem2Click(Sender: TObject);
 begin
   FileWork:='';
-  Memo1.Clear; //Очищаем поле и имя переменной
+  Memo1.Clear;
+end;
+
+//Нажатие "Вырезать" в меню "Правка"
+procedure TForm1.MenuItem10Click(Sender: TObject);
+begin
+  Memo1.CutToClipboard;
+end;
+
+//Нажатие "Копировать" в меню "Правка"
+procedure TForm1.MenuItem11Click(Sender: TObject);
+begin
+  Memo1.CopyToClipboard;
+end;
+
+//Нажатие "Вставить" в меню "Правка"
+procedure TForm1.MenuItem12Click(Sender: TObject);
+begin
+  Memo1.PasteFromClipboard;
 end;
 
 end.

@@ -1,7 +1,7 @@
 object Form1: TForm1
-  Left = 565
+  Left = 664
   Height = 394
-  Top = 170
+  Top = 171
   Width = 665
   Caption = 'Form1'
   ClientHeight = 374
@@ -30,6 +30,7 @@ object Form1: TForm1
       end
       object MenuItem4: TMenuItem
         Caption = 'Закрыть'
+        OnClick = MenuItem4Click
       end
       object MenuItem5: TMenuItem
         Caption = 'Сохранить'
@@ -48,15 +49,19 @@ object Form1: TForm1
       Caption = 'Правка'
       object MenuItem9: TMenuItem
         Caption = 'Выделить Все'
+        OnClick = MenuItem9Click
       end
       object MenuItem10: TMenuItem
         Caption = 'Вырезать'
+        OnClick = MenuItem10Click
       end
       object MenuItem11: TMenuItem
         Caption = 'Копировать'
+        OnClick = MenuItem11Click
       end
       object MenuItem12: TMenuItem
         Caption = 'Вставить'
+        OnClick = MenuItem12Click
       end
     end
     object MenuItem13: TMenuItem
