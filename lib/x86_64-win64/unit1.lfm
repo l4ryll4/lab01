@@ -1,23 +1,58 @@
 object Form1: TForm1
-  Left = 664
+  Left = 332
   Height = 394
-  Top = 171
-  Width = 665
-  Caption = 'Form1'
+  Top = 175
+  Width = 672
+  Caption = 'Текстовый редактор'
   ClientHeight = 374
-  ClientWidth = 665
+  ClientWidth = 672
+  Color = clNone
   Menu = MainMenu1
+  OnCreate = FormCreate
   LCLVersion = '2.0.6.0'
   object Memo1: TMemo
-    Left = 16
-    Height = 304
-    Top = 16
-    Width = 632
+    Left = 0
+    Height = 352
+    Top = 0
+    Width = 672
+    Color = clWhite
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Color = clBlack
+    Font.Height = -16
+    Font.Name = 'Arial Narrow'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
     TabOrder = 0
   end
+  object StatusBar1: TStatusBar
+    Left = 0
+    Height = 23
+    Top = 351
+    Width = 672
+    Color = clBlue
+    Panels = <    
+      item
+        Width = 50
+      end    
+      item
+        Width = 50
+      end    
+      item
+        Width = 50
+      end    
+      item
+        Width = 80
+      end    
+      item
+        Width = 50
+      end>
+    ParentColor = False
+    SimplePanel = False
+  end
   object MainMenu1: TMainMenu
-    left = 24
-    top = 328
+    left = 632
+    top = 8
     object MenuItem1: TMenuItem
       Caption = 'Файл'
       object MenuItem2: TMenuItem
@@ -68,9 +103,11 @@ object Form1: TForm1
       Caption = 'Вид'
       object MenuItem14: TMenuItem
         Caption = 'Шрифт'
+        OnClick = MenuItem14Click
       end
       object MenuItem15: TMenuItem
         Caption = 'Тема Оформления'
+        OnClick = MenuItem15Click
       end
     end
     object MenuItem16: TMenuItem
@@ -96,13 +133,19 @@ object Form1: TForm1
     Title = 'Сохранить файл'
     DefaultExt = '.txt'
     Filter = 'Текстовый документ|*.txt|Все документы|*.*'
-    left = 168
-    top = 328
+    left = 632
+    top = 104
   end
   object OpenDialog1: TOpenDialog
     Title = 'Открыть файл'
     Filter = 'Текстовые документы|*.txt|Все документы|*.*'
-    left = 88
-    top = 328
+    left = 632
+    top = 152
+  end
+  object FontDialog1: TFontDialog
+    MinFontSize = 0
+    MaxFontSize = 0
+    left = 632
+    top = 56
   end
 end
