@@ -14,8 +14,10 @@ type
   TForm2 = class(TForm)
     Button1: TButton;
     Button2: TButton;
+    Button3: TButton;
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
   private
 
   public
@@ -24,6 +26,7 @@ type
 
 var
   Form2: TForm2;
+  check: Real;
 
 implementation
 
@@ -37,18 +40,54 @@ uses
 //Включение стандартных настроек оформления окна
 procedure TForm2.Button1Click(Sender: TObject);
 begin
-  Form1.Memo1.Color:=clWhite; //Цвет окна memo - белый
-  Form1.Memo1.Font.Color:=clBlack; //Цвет шрифта - черный
-  Form1.Memo1.Font.Size:=12; //Размер шрифта - 12
-  Form1.Memo1.Font.Style:= [ ];//Никаких дополнительных стилей шрифта
+  If SynS = 1 then
+  begin
+    Form1.SynEdit1.Color:=clWhite; //Цвет окна memo - белый
+    Form1.SynEdit1.Font.Color:=clBlack; //Цвет шрифта - черный
+    Form1.SynEdit1.Font.Size:=12; //Размер шрифта - 12
+    Form1.SynEdit1.Font.Style:= [ ];//Никаких дополнительных стилей шрифта
+  end else
+  begin
+    Form1.Memo1.Color:=clWhite; //Цвет окна memo - белый
+    Form1.Memo1.Font.Color:=clBlack; //Цвет шрифта - черный
+    Form1.Memo1.Font.Size:=12; //Размер шрифта - 12
+    Form1.Memo1.Font.Style:= [ ];//Никаких дополнительных стилей шрифта
+  end;
 end;
 
 procedure TForm2.Button2Click(Sender: TObject);
 begin
-  Form1.Memo1.Color:=clBlack; //Цвет окна memo - черный
-  Form1.Memo1.Font.Color:=clWhite; //Цвет шрифта - белый
-  Form1.Memo1.Font.Size:=15; //Размер шрифта 15. Чего мелочиться?
-  Form1.Memo1.Font.Style:=[fsBold]; //Полужирный стиль шрифта
+  If SynS = 1 then
+  begin
+    Form1.SynEdit1.Color:=clBlack; //Цвет окна memo - белый
+    Form1.SynEdit1.Font.Color:=clWhite; //Цвет шрифта - черный
+    Form1.SynEdit1.Font.Size:=15; //Размер шрифта - 12
+    Form1.SynEdit1.Font.Style:= [fsBold];//Никаких дополнительных стилей шрифта
+  end else
+  begin
+    Form1.Memo1.Color:=clBlack; //Цвет окна memo - белый
+    Form1.Memo1.Font.Color:=clWhite; //Цвет шрифта - черный
+    Form1.Memo1.Font.Size:=15; //Размер шрифта - 12
+    Form1.Memo1.Font.Style:= [fsBold];//Никаких дополнительных стилей шрифта
+  end;
+end;
+
+procedure TForm2.Button3Click(Sender: TObject);
+begin
+  if SynS = 1 then
+  begin
+    Form1.SynEdit1.Hide;
+    Form1.Memo1.Show;
+    Button3.Caption:='Режим подсветки синтаксиса';
+    SynS:= 0;
+  end
+  else
+  begin
+    Form1.Memo1.Hide;
+    Form1.SynEdit1.Show;
+    Button3.Caption:='Режим блокнота';
+    SynS:= 1;
+  end;
 end;
 
 end.

@@ -1,7 +1,7 @@
 object Form2: TForm2
-  Left = 1081
+  Left = 1000
   Height = 314
-  Top = 341
+  Top = 265
   Width = 253
   Caption = 'Темы Оформления'
   ClientHeight = 314
@@ -28,9 +28,10 @@ object Form2: TForm2
   object Button3: TButton
     Left = 16
     Height = 25
-    Top = 96
-    Width = 227
-    Caption = 'Светлая тема'
+    Top = 272
+    Width = 224
+    Caption = 'Режим подсветки синтаксиса'
+    OnClick = Button3Click
     TabOrder = 2
   end
 end
