@@ -52,6 +52,7 @@ type
     procedure MenuItem14Click(Sender: TObject);
     procedure MenuItem15Click(Sender: TObject);
     procedure MenuItem17Click(Sender: TObject);
+    procedure MenuItem20Click(Sender: TObject);
     procedure MenuItem2Click(Sender: TObject);
     procedure MenuItem3Click(Sender: TObject);
     procedure MenuItem4Click(Sender: TObject);
@@ -224,6 +225,11 @@ end;
 
 //Нажатие "Поиск" в меню поиска
 procedure TForm1.MenuItem17Click(Sender: TObject);
+begin
+  Form5.Show;
+end;
+
+procedure TForm1.MenuItem20Click(Sender: TObject);
 begin
   Form3.Show;
 end;

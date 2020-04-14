@@ -1,33 +1,18 @@
 object Form3: TForm3
-  Left = 556
-  Height = 616
-  Top = 112
-  Width = 528
-  Caption = 'Form3'
+  Left = 345
+  Height = 232
+  Top = 109
+  Width = 292
+  Caption = 'Справка'
+  ClientHeight = 232
+  ClientWidth = 292
   LCLVersion = '2.0.6.0'
-  object PopupMenu1: TPopupMenu
-    left = 48
-    top = 80
-    object MenuItem1: TMenuItem
-      Caption = 'MenuItem1'
-    end
-    object MenuItem2: TMenuItem
-      Caption = 'MenuItem2'
-    end
-    object MenuItem3: TMenuItem
-      Caption = 'MenuItem3'
-    end
-    object MenuItem4: TMenuItem
-      Caption = 'MenuItem4'
-    end
-    object MenuItem5: TMenuItem
-      Caption = 'MenuItem5'
-    end
-    object MenuItem6: TMenuItem
-      Caption = 'MenuItem6'
-    end
-    object MenuItem7: TMenuItem
-      Caption = 'MenuItem7'
-    end
+  object Label1: TLabel
+    Left = 88
+    Height = 15
+    Top = 32
+    Width = 124
+    Caption = 'Заглушка для справки'
+    ParentColor = False
   end
 end

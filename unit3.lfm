@@ -1,8 +1,18 @@
 object Form3: TForm3
-  Left = 556
-  Height = 616
-  Top = 112
-  Width = 528
-  Caption = 'Form3'
+  Left = 345
+  Height = 232
+  Top = 109
+  Width = 292
+  Caption = 'Справка'
+  ClientHeight = 232
+  ClientWidth = 292
   LCLVersion = '2.0.6.0'
+  object Label1: TLabel
+    Left = 88
+    Height = 15
+    Top = 32
+    Width = 124
+    Caption = 'Заглушка для справки'
+    ParentColor = False
+  end
 end

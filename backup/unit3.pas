@@ -5,21 +5,15 @@ unit Unit3;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, Menus;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, Menus, StdCtrls,
+  ActnList, ExtCtrls;
 
 type
 
   { TForm3 }
 
   TForm3 = class(TForm)
-    MenuItem1: TMenuItem;
-    MenuItem2: TMenuItem;
-    MenuItem3: TMenuItem;
-    MenuItem4: TMenuItem;
-    MenuItem5: TMenuItem;
-    MenuItem6: TMenuItem;
-    MenuItem7: TMenuItem;
-    PopupMenu1: TPopupMenu;
+    Label1: TLabel;
   private
 
   public
@@ -30,6 +24,14 @@ var
   Form3: TForm3;
 
 implementation
+
+procedure TForm2.RadioButton1Change(Sender: TObject);
+begin
+  if RadioButton1.Checked=true then
+  begin
+    ListBox.Text:='Вы нажали первую кнопку';
+  end;
+end;
 
 {$R *.lfm}
 

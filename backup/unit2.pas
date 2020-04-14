@@ -23,6 +23,7 @@ type
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure RadioButton1Change(Sender: TObject);
   private
 
   public
@@ -100,6 +101,23 @@ end;
 procedure TForm2.FormShow(Sender: TObject);
 begin
   RadioGroup1.Hide;
+end;
+
+procedure TForm2.RadioButton1Change(Sender: TObject);
+begin
+  if RadioButton1.Checked=true then
+  begin
+    Form1.SynEdit1.Highlighter:=Form1.SynHTMLSyn1;
+  end;
+  if RadioButton2.Checked=true then
+  begin
+    Form1.SynEdit1.Highlighter:=Form1.SynCssSyn1;
+  end;
+  if RadioButton3.Checked=true then
+  begin
+    Form1.SynEdit1.Highlighter:=Form1.SynPythonSyn1;
+  end;
+
 end;
 
 end.

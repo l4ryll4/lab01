@@ -622,6 +622,7 @@ object Form1: TForm1
       Caption = 'Справка'
       object MenuItem20: TMenuItem
         Caption = 'Справка'
+        OnClick = MenuItem20Click
       end
       object MenuItem21: TMenuItem
         Caption = 'О программе'

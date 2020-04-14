@@ -74,7 +74,7 @@ var
 implementation
 
 uses
-  Unit2, Unit3;
+  Unit2, Unit3, Unit4, Unit5;
 
 {$R *.lfm}
 
@@ -226,7 +226,7 @@ end;
 //Нажатие "Поиск" в меню поиска
 procedure TForm1.MenuItem17Click(Sender: TObject);
 begin
-  Form3.Show;
+  Form5.Show;
 end;
 
 procedure TForm1.MenuItem20Click(Sender: TObject);
