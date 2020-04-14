@@ -6,7 +6,8 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, Menus, ActnList,
-  StdCtrls, ComCtrls, SynEdit;
+  StdCtrls, ComCtrls, SynEdit, SynHighlighterHTML, SynHighlighterCss,
+  SynHighlighterPython;
 
 type
 
@@ -40,7 +41,10 @@ type
     OpenDialog1: TOpenDialog;
     SaveDialog1: TSaveDialog;
     StatusBar1: TStatusBar;
+    SynCssSyn1: TSynCssSyn;
     SynEdit1: TSynEdit;
+    SynHTMLSyn1: TSynHTMLSyn;
+    SynPythonSyn1: TSynPythonSyn;
     procedure FormCreate(Sender: TObject);
     procedure MenuItem10Click(Sender: TObject);
     procedure MenuItem11Click(Sender: TObject);
@@ -218,7 +222,6 @@ begin
   Form2.Show;
 end;
 
-end;
 //Нажатие "Поиск" в меню поиска
 procedure TForm1.MenuItem17Click(Sender: TObject);
 begin

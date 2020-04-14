@@ -4,8 +4,8 @@ object Form1: TForm1
   Top = 338
   Width = 672
   Caption = 'Текстовый редактор'
-  ClientHeight = 0
-  ClientWidth = 0
+  ClientHeight = 373
+  ClientWidth = 672
   Color = clNone
   Menu = MainMenu1
   OnCreate = FormCreate
@@ -646,5 +646,23 @@ object Form1: TForm1
     MaxFontSize = 0
     left = 632
     top = 56
+  end
+  object SynHTMLSyn1: TSynHTMLSyn
+    DefaultFilter = 'Документ HTML (*.htm,*.html)|*.htm;*.html'
+    Enabled = False
+    left = 632
+    top = 208
+  end
+  object SynCssSyn1: TSynCssSyn
+    DefaultFilter = 'Каскадированные таблицы стилей (*.css)|*.css'
+    Enabled = False
+    left = 632
+    top = 256
+  end
+  object SynPythonSyn1: TSynPythonSyn
+    DefaultFilter = 'Файлы Python (*.py)|*.py'
+    Enabled = False
+    left = 632
+    top = 304
   end
 end

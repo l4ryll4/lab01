@@ -5,7 +5,7 @@ unit Unit2;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, ExtCtrls;
 
 type
 
@@ -15,9 +15,14 @@ type
     Button1: TButton;
     Button2: TButton;
     Button3: TButton;
+    RadioButton1: TRadioButton;
+    RadioButton2: TRadioButton;
+    RadioButton3: TRadioButton;
+    RadioGroup1: TRadioGroup;
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
 
   public
@@ -79,15 +84,22 @@ begin
     Form1.SynEdit1.Hide;
     Form1.Memo1.Show;
     Button3.Caption:='Режим подсветки синтаксиса';
-    SynS = 0;
+    RadioGroup1.Hide;
+    SynS:= 0;
   end
   else
   begin
     Form1.Memo1.Hide;
     Form1.SynEdit1.Show;
     Button3.Caption:='Режим блокнота';
-    SynS = 1;
+    RadioGroup1.Show;
+    SynS:= 1;
   end;
+end;
+
+procedure TForm2.FormShow(Sender: TObject);
+begin
+  RadioGroup1.Hide;
 end;
 
 end.
