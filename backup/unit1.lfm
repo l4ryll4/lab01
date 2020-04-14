@@ -1,7 +1,7 @@
 object Form1: TForm1
-  Left = 342
+  Left = 353
   Height = 393
-  Top = 338
+  Top = 254
   Width = 672
   Caption = 'Текстовый редактор'
   ClientHeight = 373
@@ -43,6 +43,9 @@ object Form1: TForm1
       end    
       item
         Width = 80
+      end    
+      item
+        Width = 50
       end    
       item
         Width = 50
@@ -664,6 +667,12 @@ object Form1: TForm1
     DefaultFilter = 'Файлы Python (*.py)|*.py'
     Enabled = False
     left = 632
+    top = 304
+  end
+  object Timer1: TTimer
+    Interval = 1
+    OnTimer = Timer1Timer
+    left = 576
     top = 304
   end
 end

@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, Menus, ActnList,
-  StdCtrls, ComCtrls, SynEdit, SynHighlighterHTML, SynHighlighterCss,
+  StdCtrls, ComCtrls, ExtCtrls, SynEdit, SynHighlighterHTML, SynHighlighterCss,
   SynHighlighterPython;
 
 type
@@ -45,6 +45,7 @@ type
     SynEdit1: TSynEdit;
     SynHTMLSyn1: TSynHTMLSyn;
     SynPythonSyn1: TSynPythonSyn;
+    Timer1: TTimer;
     procedure FormCreate(Sender: TObject);
     procedure MenuItem10Click(Sender: TObject);
     procedure MenuItem11Click(Sender: TObject);
@@ -60,6 +61,7 @@ type
     procedure MenuItem6Click(Sender: TObject);
     procedure MenuItem7Click(Sender: TObject);
     procedure MenuItem9Click(Sender: TObject);
+    procedure Timer1Timer(Sender: TObject);
   private
 
   public
@@ -74,7 +76,7 @@ var
 implementation
 
 uses
-  Unit2, Unit3;
+  Unit2, Unit3, Unit4, Unit5;
 
 {$R *.lfm}
 
@@ -86,9 +88,8 @@ begin
   SynEdit1.Hide;
   SynS:= 0;
   StatusBar1.Panels[0].Text:=('Время: ');
-  StatusBar1.Panels[1].Text:=FormatDateTime('hh.mm', Time);
   StatusBar1.Panels[2].Text:=('Дата: ');
-  StatusBar1.Panels[3].Text:=FormatDateTime('dd.mm.yyyy', Date);
+  StatusBar1.Panels[4].Text:=('Рабочая строка')
 end;
 
 //это нужно для сохранения файла под определенным именем
@@ -115,7 +116,6 @@ end;
 //Нажатие "Закрыть" в меню "Файл"
 procedure TForm1.MenuItem7Click(Sender: TObject);
 begin
-
   Close;
 end;
 //Нажатие "Выбрать Все" в меню "Правка"
@@ -123,6 +123,18 @@ procedure TForm1.MenuItem9Click(Sender: TObject);
 begin
   If SynS = 1 then SynEdit1.SelectAll else Memo1.SelectAll;
 end;
+//Обновления статусбара по таймеру
+procedure TForm1.Timer1Timer(Sender: TObject);
+var a: string;
+begin
+  if SynS = 0 then a:= IntToStr(Memo1.CaretPos.Y) else a:= IntToStr(SynEdit1.CaretY);
+
+  StatusBar1.Panels[1].Text:=FormatDateTime('hh.mm.ss', Time);
+  StatusBar1.Panels[3].Text:=FormatDateTime('dd.mm.yyyy', Date);
+  StatusBar1.Panels[5].Text:=a;
+
+end;
+
 //Нажатие "Открыть" в меню "Файл"
 procedure TForm1.MenuItem3Click(Sender: TObject);
 begin
