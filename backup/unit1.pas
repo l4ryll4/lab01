@@ -54,6 +54,7 @@ type
     procedure MenuItem15Click(Sender: TObject);
     procedure MenuItem17Click(Sender: TObject);
     procedure MenuItem20Click(Sender: TObject);
+    procedure MenuItem21Click(Sender: TObject);
     procedure MenuItem2Click(Sender: TObject);
     procedure MenuItem3Click(Sender: TObject);
     procedure MenuItem4Click(Sender: TObject);
@@ -127,7 +128,7 @@ end;
 procedure TForm1.Timer1Timer(Sender: TObject);
 var a: string;
 begin
-  if SynS = 0 then a:= IntToStr(Memo1.CaretPos.Y) else a:= IntToStr(SynEdit1.CaretY);
+  if SynS = 0 then a:= IntToStr(Memo1.CaretPos.Y + 1) else a:= IntToStr(SynEdit1.CaretY);
 
   StatusBar1.Panels[1].Text:=FormatDateTime('hh.mm.ss', Time);
   StatusBar1.Panels[3].Text:=FormatDateTime('dd.mm.yyyy', Date);
@@ -244,6 +245,11 @@ end;
 procedure TForm1.MenuItem20Click(Sender: TObject);
 begin
   Form3.Show;
+end;
+
+procedure TForm1.MenuItem21Click(Sender: TObject);
+begin
+  Form4.Show;
 end;
 
 end.
